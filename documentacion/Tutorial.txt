@@ -1,0 +1,12 @@
+Los templates estan en /blog/templates/blog
+
+
+blog/views.py 
+
+Crea tus vistas
+
+blog/urls.py
+
+Crea urls
+
+

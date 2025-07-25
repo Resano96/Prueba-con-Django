@@ -1,0 +1,20 @@
+(myenv) PS C:\Users\Ander\Desktop\Programacion\python\Django> python manage.py shell
+Python 3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from blog.models import Post
+>>> Post.objects.all()
+<QuerySet [<Post: sadasdasdas>, <Post: fghfghf>, <Post: sjghjghj>]>
+>>> Post.objects.create(author=me, title='Sample title', text='Test')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'me' is not defined
+>>> from django.contrib.auth.models import User
+>>> User.objects.all()
+<QuerySet [<User: ander>]>
+>>> me = User.objects.get(username='ander')      
+>>> Post.objects.create(author=me, title='Sample title', text='Test')
+<Post: Sample title>
+>>> Post.objects.all()
+<QuerySet [<Post: sadasdasdas>, <Post: fghfghf>, <Post: sjghjghj>, <Post: Sample title>]>
+>>>

@@ -1,0 +1,1 @@
+(myenv) PS C:\Users\Ander\Desktop\Programacion\python\Django> python manage.py shell

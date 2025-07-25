@@ -1,0 +1,24 @@
+>>> Post.objects.filter(author=me)
+
+<QuerySet [<Post: sadasdasdas>, <Post: fghfghf>, <Post: sjghjghj>, <Post: Sample title>, <Post: Sample title2>]>
+
+
+>>> Post.objects.filter(title__contains='title')
+
+<QuerySet [<Post: Sample title>, <Post: Sample title2>]>
+
+
+>>> from django.utils import timezone
+>>> Post.objects.filter(published_date__lte=timezone.now())
+
+<QuerySet []>
+
+
+>>> post = Post.objects.get(title="Sample title")    
+
+>>> post.publish()
+
+>>> Post.objects.filter(published_date__lte=timezone.now())
+
+<QuerySet [<Post: Sample title>]>
+>>>

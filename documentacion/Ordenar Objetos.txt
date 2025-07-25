@@ -1,0 +1,11 @@
+>>> Post.objects.order_by('created_date')
+
+<QuerySet [<Post: fghfghf>, <Post: sadasdasdas>, <Post: sjghjghj>, <Post: Sample title>, <Post: Sample title2>]>
+
+>>> Post.objects.order_by('-created_date')
+
+<QuerySet [<Post: Sample title2>, <Post: Sample title>, <Post: sjghjghj>, <Post: sadasdasdas>, <Post: fghfghf>]>
+
+>>> Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+
+<QuerySet [<Post: Sample title>]>
